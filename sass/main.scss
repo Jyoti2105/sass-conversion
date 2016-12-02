@@ -36,21 +36,21 @@ ul{
     border-bottom:1rem solid $med-blue;
     border-top:1rem solid $dark-blue;
     position: relative;
-}
-:before,
-:after{
+&:before,
+&:after{
     content:"";
     position:absolute;
     bottom:-1rem;
-    width:30%;
+    @include width_cal(30%);
     height:1rem;
     background-color: $dark-blue;
 }
-:before{
+&:before{
     left:0;
 }
-:after{
+&:after{
     right:0;
+}
 }
 .bg-focal{
     background-color: $light-brown;
@@ -72,24 +72,24 @@ ul{
 	@extend %bheader;
 }
 header{
-    width: 400px; 
+    @include width_cal(400px); 
     margin: 0 auto;
     position: relative;
 h1{
-    width: 100%;
+    @include width_cal(100%);
     padding: 0 2rem;
 }
  nav{
-    width: 100%;
+   @include width_cal(100%);
 }
  nav>ul li{
-    width:100%;
+  @include width_cal(100%);
     float: none;
 }
 }
 section{
   &.focal{
-    width: 400px; 
+    @include width_cal(400px); 
     margin: 0 auto;
         }
   &.content1{
@@ -103,7 +103,7 @@ section{
     clear: both;
 }
 .col-2{
-    width:50%;
+     @include width_cal(50%);
     float:left;
     padding-bottom: 2rem;
     border-left:1px solid $dark-blue;
@@ -111,11 +111,11 @@ section{
 footer &:first-child {
     border-left: 0;
 }
+}
 footer{
     padding:2rem 0;
 	P:last-child{	
 	}
-}
 }
 header nav{
     padding:2rem 0;
@@ -143,14 +143,14 @@ header nav{
     letter-spacing: 0.1rem;
      i.fa-lg{
     display:block;
-    width: 25%;
+     @include width_cal(50%);
     float:left;
     font-size: 7rem;
     line-height: 12.7936rem;
     color: $light-brown;
  ~ span{
     float: right;
-    width: 75%;
+    @include width_cal(75%);
     font-size: 3.998rem;
     padding-left: 1rem;
     text-align: right;
@@ -200,8 +200,7 @@ li{
     font-size: 1.414rem;
 }
 	}
-
-	footer{ 
+    footer{ 
 	h4{
     font-size: 1.414rem;
     padding: 0.5rem 2rem;
@@ -224,14 +223,13 @@ li{
     display:none;
 }
 	}
-
-@media only screen and (max-width: 701px 900px){
+@include mobile{
     header{
-        width: 700px;
+        @include width_cal(700px);
         margin: 0 auto;
         min-height: 8rem;
     h1{
-        width: 100%;
+        @include width_cal(100%);
         color: $dark-brown;
     }
     i.fa-lg{
@@ -250,16 +248,16 @@ li{
     }
 		&:before,
         &:after{
-        width:230px;
+        @include width_cal(230px);
     }
       nav{
         position: static;
         clear:both;
-        width: 100%;
+        @include width_cal(100%);
         padding: 0;
     }
        &>ul>li{
-        width:20%;
+       @include width_cal(20%);
         float: left;
     }
        &>a{
@@ -280,12 +278,12 @@ li{
         &.content1,
         &.content2,
     footer{
-        width: 700px; 
+        @include width_cal(700px); 
         margin: 0 auto;    
     }
 	}
     .col-4{
-        width:50%;
+        @include width_cal(50%);
         float:left;
     }
 	section.content2{	
@@ -314,17 +312,16 @@ li{
     }
 }
 }
-@media only screen and (max-width: 901px 1400px){
+@include tablet{
     header{
-        width: 900px;
+        @include width_cal(900px);
         margin: 0 auto;
-    }
-    :before,
-    :after{
-        width:300px;
+    &:before,
+    &:after{
+         @include width_cal(300px);
     }
      h1{
-        width: 100%;
+        @include width_cal(100%);
         color: $dark-blue;
         i.fa-lg{
         display:inline;
@@ -344,10 +341,10 @@ li{
     nav{
         position: static;
         clear:both;
-        width: 100%;
+         @include width_cal(100%);
         padding: 0;
      &>ul>li{
-        width:20%;
+         @include width_cal(20%);
         float: left;
         background-color: $white;
      &>a{
@@ -370,30 +367,30 @@ li{
     &.content1,
     &.content2,
     footer{
-        width: 900px; 
-        margin: 0 auto;    
+         @include width_cal(900px); 
+         margin: 0 auto;    
     }
     &.focal {
 		h2{
-        width: 600px; 
+         @include width_cal(600px); 
         margin: 0 auto;
     }
      p.author{
-        width: 600px; 
+         @include width_cal(900px);
         margin: 0 auto;
     }
 		}
 		}
 	.col-3{
         float:left;
-        width: 30%;
+         @include width_cal(30%);
         margin-left: 5%;
      &:first-child{
         margin-left: 0;
     }
 		}
     .col-4{
-        width:22%;
+         @include width_cal(22%);
         margin-left: 4%;
         float:left;
     &:first-child{
@@ -441,16 +438,16 @@ li{
     }
 }
 	}
-@media only screen and (max-width: 1401px){
+@include desktop{
     header{
-        width: 1400px;
+         @include width_cal(1400px);
         margin:0 auto;
     &:before,
     &:after{
-        width:450px;
+         @include width_cal(450px);
     }
      h1{
-        width: 100%;
+         @include width_cal(100%);
         color: $dark-brown;
      i.fa-lg{
         display:inline;
@@ -470,13 +467,12 @@ li{
     nav{
         position: static;
         clear:both;
-        width: 100%;
+        @include width_cal(100%);
         padding: 0;
      &>ul>li{
-        width:20%;
+        @include width_cal(20%);
         float: left;
         background-color: $white;
-    }
         &>a{
         font-size: 1.414rem;
         line-height: 2rem;
@@ -486,6 +482,7 @@ li{
         padding:0 1.0rem;
         margin:1.0rem 0;
         background-color: $white;
+		 }
         &:first-child a{
         border-left:none;
     }
@@ -497,31 +494,31 @@ li{
         &.content1,
         &.content2,
     footer{
-        width: 1400px; 
+        @include width_cal(1400px); 
         margin: 0 auto;    
     }
 	&.focal{
 	h2{
         font-size: 3.998rem;
-        width: 600px; 
+        @include width_cal(600px);
         margin: 0 auto;
     }
        p.author{
-        width: 600px; 
+        @include width_cal(600px); 
         margin: 0 auto;
     }
 		}
 		}
 		.col-3{
         float:left;
-        width: 30%;
+        @include width_cal(30%);
         margin-left: 5%;
         &:first-child{
         margin-left: 0;
     }
 		}
     .col-4{
-        width:22%;
+        @include width_cal(22%);
         margin-left: 4%;
         float:left;
      &:first-child{
@@ -533,7 +530,7 @@ li{
 		h3{
         font-size: 2.827rem;
         font-weight: 100;
-    }
+    
         .fa-2x{
         font-size: 2.827rem;
         padding-right: 1rem;
@@ -553,6 +550,7 @@ li{
         font-weight: 400;
     }
 		}
+	}
     footer {
 		p{
         font-size: 1.414rem;
@@ -574,4 +572,4 @@ li{
 		}
 	}
 }
-	
+}
