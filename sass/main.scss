@@ -1,13 +1,13 @@
-@import "variables";
-@import "mixins";
-@import "queries";
+@import '_variables';
+@import '_mixins';
+@import '_queries';
 
 *{
     padding:0;
     margin: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    &:after,
+    &:after,_
     &:before{
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
